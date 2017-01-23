@@ -8,8 +8,16 @@ import NavBar from './nav/navigation'
 //import Calendar from './Calendar/Calendar.jsx'
 //<Calendar />
 
-const Home = withRouter(React.createClass({
+const Home = React.createClass({
+  componentDidMount(){
+    this.props.location.query.li === 'y' ? 
+    window.location.refresh()
+    :
+    null;
+  },
+
   render() {
+    console.log(this.props)
     return(
         <div className="background">          
           <div style={{width: '100vw', height: '100vh'}} data-vide-bg={require("./images/Manhatten-Night.mp4")} data-vide-options=" position: 0% 0%"></div>
@@ -24,6 +32,6 @@ const Home = withRouter(React.createClass({
        </div>
     )
   }
-}));
+});
 
 export default Home;
