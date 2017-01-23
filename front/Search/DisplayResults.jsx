@@ -23,7 +23,7 @@ const DisplayResults = React.createClass({
       queries += (query[key] + ',');
     };
   };
-  !queries ? queries = "legal" : null;
+  !queries ? queries = "legal,education" : null;
 
  	let url = 'https://c4q-dot-searchbertha-hrd.appspot.com/_ah/api/search/v1/zipcodes/';
 	let zipcode = query.zipcode;
@@ -35,17 +35,15 @@ const DisplayResults = React.createClass({
       console.log("this is res.data.programs===========>",res.data)
 
       let idArr = res.data.programs.map( (program) => program.id);
-
-      // idArr.forEach( (id) => {
-      //   axios.get(`/review/providerId/${id}`)
-      //     .then( (res) => {
-      //       reviews.concat(res.data)} );
-      // });
       this.setState({programs: res.data.programs, provIds: idArr});
     })
     .catch( (err) => {
       console.log(err);
     });
+  },
+
+  fav(event){
+
   },
 
   refresh(){
@@ -55,7 +53,6 @@ const DisplayResults = React.createClass({
   render(){
     let programs = this.state.programs
     let provIds = this.state.provIds
-    console.log("OUR STATE =====>", this.state)
     return (
       <div>
         <SearchBar refresh={this.refresh}/>
@@ -68,7 +65,7 @@ const DisplayResults = React.createClass({
                       <Map coords={program.offices[0].location} name={program.name} />
                     </div>
                     <div className="two">
-                      <h1>{program.name}</h1>
+                      <h1 className="readMore"><span className="read-more-target">{program.name}</span></h1>
                       {program.description.replace(/\<br\>|\<br\/\>/g," ")
           //screw it!!!
                       }
@@ -79,9 +76,13 @@ const DisplayResults = React.createClass({
                       <p>{program.offices[0].address1} {program.offices[0].postal} {program.offices[0].city},{program.offices[0].state}</p>
 
                     </div>
-                    <div className="three"></div>
+                    <div className="three">
+                    
+                    
+                    </div>
 
 
+             <i onClick={this.fav} name="wHeart" className="fa fa-heart-o" aria-hidden="false"></i> <i onClick={this.fav} name="bHeart" className="fa fa-heart" aria-hidden="true" hidden></i>
 
 
               </div>
