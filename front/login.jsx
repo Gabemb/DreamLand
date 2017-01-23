@@ -13,7 +13,7 @@ const Login = React.createClass({
 		axios.post('/api/users/login/', this.state)
 			.then( (res) => {
 				console.log(res)
-				this.props.router.push('/?li=y');
+				this.props.router.push('/');
 			})
 			.catch( (err) => {
 				console.log(err);

@@ -9,13 +9,6 @@ import NavBar from './nav/navigation'
 //<Calendar />
 
 const Home = React.createClass({
-  componentDidMount(){
-    this.props.location.query.li === 'y' ? 
-    window.location.refresh()
-    :
-    null;
-  },
-
   render() {
     console.log(this.props)
     return(

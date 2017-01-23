@@ -134,7 +134,7 @@ input {
   text-decoration: none;
 
 }
-
+ 
 a:link {
     text-decoration: none;
     color: white;
@@ -157,8 +157,5 @@ a:active {
 }
 #sign {
   display: flex;
-  
-
-
 }
 

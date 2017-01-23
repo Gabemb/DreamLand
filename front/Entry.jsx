@@ -18,8 +18,8 @@ import './CSS/navbar.css';
 const App = (props) => {
   return (
     <div>
-      
       {props.children}
+      <div id="google_translate_element"></div>
     </div>
   )
 }

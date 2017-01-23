@@ -23,7 +23,7 @@ const DisplayResults = React.createClass({
       queries += (query[key] + ',');
     };
   };
-  !queries ? queries = "legal,education" : null;
+  !queries ? queries = "legal" : null;
 
  	let url = 'https://c4q-dot-searchbertha-hrd.appspot.com/_ah/api/search/v1/zipcodes/';
 	let zipcode = query.zipcode;
