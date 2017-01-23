@@ -4,27 +4,24 @@ import $ from 'jquery';
 const AddReview = React.createClass({ 
   getInitialState: function() {
     return ({
-      rating:0,description:"",date:""
+      rating:0,comment:""
     });
   },
   addReview: function() {
     $.ajax({
-      url: '',
+      url: '/review',
       type: 'POST',
       data: this.state
     })
     .done((data) => {
-      this.setState({ rating: data.rating, description: data.description, date: data.date
+      this.setState({ rating: data.rating, comment: data.comment
       });
     })
   },
   handleRatingChange: function(event){
     this.setState({rating: event.target.value })
   },
-  handleDateChange: function(event){
-    this.setState({date: event.target.value })
-  },
-  handleDescriptionChange: function(event){
+  handleCommentChange: function(event){
     this.setState({description: event.target.value })
   },
   render: function() {
@@ -39,8 +36,7 @@ const AddReview = React.createClass({
             <option value='4'>****</option>
             <option value='5'>*****</option>
           </select>
-          <input onChange={this.handleDateChange} type='date' value={this.state.date} placeholder='Date'/>
-          <input onChange={this.handleDescriptionChange} type='text' value={this.state.description} placeholder='Description'/>
+          <input onChange={this.handleCommentChange} type='text' value={this.state.comment} placeholder='Comment'/>
           <button onClick={this.addReview}>Add Review</button>
           <br/>
       </form>
