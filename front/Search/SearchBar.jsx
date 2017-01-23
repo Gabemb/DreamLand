@@ -4,7 +4,7 @@ import {browserHistory} from 'react-router';
 
 const SearchBar = React.createClass({
 	getInitialState(){
-		return{zipcode: "", age: "", status: "", attr: ""}
+		return{zipcode: "", age: "", status: "", attr: "", edu: "", fAid: "", citzi: ""}
 	},
 
 	handleChange(event){
@@ -32,9 +32,13 @@ const SearchBar = React.createClass({
 				<img onClick={this.makeQuery} src={require('../images/search-icon.png')} alt="search-icon" style={imgStyle} />
 			</div>
 			<div id="radios">
-			 <input id="check" onChange={this.handleChange} type="checkbox" name="age" value="young+adult" /> Young Adult
-				<input id="check" onChange={this.handleChange} type="checkbox" name="status" value="undocumented" /> Undocumented
-				<input id="check"onChange={this.handleChange} type="checkbox" name="attr" value="lgbtq" />LGBTQ
+			 <input className="check" onChange={this.handleChange} type="checkbox" name="age" value="young+adult" /> Young Adult
+				<input className="check" onChange={this.handleChange} type="checkbox" name="status" value="undocumented" /> Undocumented
+				<input className="check" onChange={this.handleChange} type="checkbox" name="attr" value="lgbtq" />LGBTQ
+				<input className="check" onChange={this.handleChange} type="checkbox" name="edu" value="education" />Education
+				<input className="check" onChange={this.handleChange} type="checkbox" name="fAid" value="financial+aid+%26+Loans" />Financial Aid
+				<input className="check" onChange={this.handleChange} type="checkbox" name="citzi" value="Citizenship+%26+Immigration" />Citizenship/Immigration
+
 			
 			</div>
 	      </div>
