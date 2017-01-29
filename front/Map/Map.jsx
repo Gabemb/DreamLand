@@ -21,7 +21,7 @@ const Map = React.createClass({
         lng={coords.longitude}
         zoom={12}
         loadingMessage={"I'm loading!"}
-        params={{v: '3.exp', key: 'AIzaSyCJWX30ipWXQOogmHhvuMd-0HJq2PIwvJU'}}
+        params={{v: '3.exp', key: 'API KEY HERE'}}
         onMapCreated={this.onMapCreated}>
         <Marker
           lat={coords.latitude}
