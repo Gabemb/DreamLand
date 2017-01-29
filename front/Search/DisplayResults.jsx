@@ -27,7 +27,7 @@ const DisplayResults = React.createClass({
 
  	let url = 'https://c4q-dot-searchbertha-hrd.appspot.com/_ah/api/search/v1/zipcodes/';
 	let zipcode = query.zipcode;
-	let attributes = `/programs?api_key=b30f1b9f41161c0fb3b39cb49aff8104&attributeTag=${age},${queries}&cursor=0&limit=50`;
+	let attributes = `/programs?api_key=KEYGOESHERE&attributeTag=${age},${queries}&cursor=0&limit=50`;
 
   console.log(url + zipcode + attributes)
   axios.get(url + zipcode + attributes)
