@@ -4,7 +4,7 @@ import {browserHistory} from 'react-router';
 
 const SearchBar = React.createClass({
 	getInitialState(){
-		return{zipcode: "", age: "", status: "", attr: ""}
+		return{zipcode: "", age: "", status: "", attr: "", edu: "", fAid: "", citzi: "", rep: '', work: '', skills: ''}
 	},
 
 	handleChange(event){
@@ -32,12 +32,18 @@ const SearchBar = React.createClass({
 				<img onClick={this.makeQuery} src={require('../images/search-icon.png')} alt="search-icon" style={imgStyle} />
 			</div>
 			<div id="radios">
-			  
-			    <input id="check"  onChange={this.handleChange} type="checkbox" name="age" value="young+adult" /> Young Adult
-				<input id="check"  onChange={this.handleChange} type="checkbox" name="status" value="undocumented" /> Undocumented
-				<input id="check"  onChange={this.handleChange} type="checkbox" name="attr" value="lgbtq" />LGBTQ
-				
+			 <input className="check" onChange={this.handleChange} type="checkbox" name="age" value="young+adult" /> Young Adult<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="status" value="undocumented" /> Undocumented<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="attr" value="lgbtq" />LGBTQ<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="edu" value="education" />Education<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="fAid" value="financial+aid+%26+Loans" />Financial Aid<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="citzi" value="Citizenship+%26+Immigration" />Citizenship/Immigration<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="skills" value="Discrimination+%26+Civil+Rights" />skills & training<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="work" value="Workplace+Rights" />Workplace Rights<br/>
+				<input className="check" onChange={this.handleChange} type="checkbox" name="rep" value="Representation" />Representation<br/>
+			
 		    </div>
+
 	      </div>
 		)
 	}
